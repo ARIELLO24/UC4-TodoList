@@ -1,11 +1,11 @@
 class Tarefa {
     descricao: string
-    prioridade: string// agora é obrigatório
+    prioridade: string
     status: 'pendente' | 'concluída'
 
     constructor(descricao: string, prioridade: string) {
         this.descricao = descricao
-        this.prioridade = prioridade// deve ser fornecido ao criar a tarefa
+        this.prioridade = prioridade
         this.status = 'pendente'
     }
 
@@ -41,7 +41,7 @@ class FilaDeTarefas {
             console.log("Nenhuma tarefa na lista.")
         } else {
             this.tarefas.forEach((tarefa, index) => {
-                console.log(`${index + 1}. ${tarefa.toString()}`)// Exibe a tarefa corretamente
+                console.log(`${index + 1}. ${tarefa.toString()}`)
             });
         }
     }
@@ -79,7 +79,7 @@ function menu() {
                     console.clear()
                     readline.question("Digite a descrição da tarefa: ", (descricao: string) => {
                         readline.question("Digite a prioridade da tarefa: ", (prioridade: string) => {
-                            const tarefa = new Tarefa(descricao, prioridade)// Prioridade agora é obrigatória
+                            const tarefa = new Tarefa(descricao, prioridade)
                             fila.adicionarTarefa(tarefa);
                             console.log("Tarefa adicionada com sucesso!")
                             console.clear()
